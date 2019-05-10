@@ -1,4 +1,6 @@
 {
   "mongoURI": "mongodb+srv://anup123:anup1234@devconnect-mzadu.mongodb.net/test?retryWrites=true",
-  "jwtSecret": "secret"
+  "jwtSecret": "secret",
+  "githubClientId": "73187d8b2966f51462e1",
+  "githubSecret": "daec6b3a6d518d927694accb1179f3c99ba9b722"
 }
