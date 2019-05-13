@@ -6,6 +6,7 @@ import Spinner from "../layout/Spinner";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import DashboardActions from "./DashboardActions";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -14,7 +15,8 @@ const Dashboard = ({
 }) => {
   useEffect(() => {
     getCurrentProfile();
-  }, [getCurrentProfile]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return loading && profile == null ? (
     <Spinner />
@@ -26,7 +28,9 @@ const Dashboard = ({
         Welcome {user && user.name}
       </p>
       {profile !== null ? (
-        <>Has</>
+        <>
+          <DashboardActions />
+        </>
       ) : (
         <>
           <p>You have not setup a profile, please add some info</p>
