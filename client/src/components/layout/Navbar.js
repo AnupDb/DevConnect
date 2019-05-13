@@ -5,10 +5,16 @@ import PropTypes from "prop-types";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { logout } from "../../actions/auth";
-import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
+      <li>
+        <Link to="/dashboard">
+          <FontAwesomeIcon icon={faUser} />
+          <span className="hide-sm"> Dashboard</span>
+        </Link>
+      </li>
       <li>
         <a onClick={logout} href="#!">
           <FontAwesomeIcon icon={faSignOutAlt} />
